@@ -2,10 +2,10 @@
 
 Blend images and create visually attractive images with the help of deep learning.
 
-**Front-End => React.js**
-**Back-End => Node.js, Express.js**
+**Front-End => React.js**, 
+__Back-End => Node.js, Express.js__
 
-# Getting Started
+## Getting Started
 
 1. Clone this repo to your local pc.
 2. You should have npm/yarn, Node.js installed on your system.
