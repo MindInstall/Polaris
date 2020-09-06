@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const bodyparser = require('body-parser');
-const ejs = require("ejs"); s
+const ejs = require("ejs");
 const path = require('path');
 const indexRoute = require("./routes/indexroute");
 const app = express();
