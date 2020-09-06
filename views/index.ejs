@@ -66,14 +66,14 @@
       <form action="/upload" method="POST" enctype="multipart/form-data"></form>
       <div class="col-md-6">
         <h1>Upload Image 1</h1>
-        <input name="myImage" type="file">
+        <input name="myImage" type="file" accept="image/*" onchange="preview_image(event)">
 
-        <img id="output_image" src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img" />
+        <img id="output_image" class="responsive-img" />
       </div>
       <div class="col-md-6">
         <h1>Upload Image 2</h1>
-        <input name="myImage" type="file">
-        <img id="output_image1" src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img" />
+        <input name="myImage" type="file" accept="image/*" onchange="preview_image1(event)">
+        <img id="output_image1" class="responsive-img" />
       </div>
       <div class="container text-center my-5">
         <button type="submit" class="btn btn-outline-secondary">Upload</button>
@@ -99,6 +99,26 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+  <script>
+    function preview_image(event) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var output = document.getElementById('output_image');
+        output.src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+
+    function preview_image1(event) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var output1 = document.getElementById('output_image1');
+        output1.src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
 </body>
 
 </html>
