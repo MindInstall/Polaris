@@ -73,7 +73,6 @@ app.post('/upload', (req, res) => {
         }
     });
 });
-app.use("/", indexRoute);
 app.listen(port, () => {
     console.log(`Server listening for requests at ${port}`)
 });
