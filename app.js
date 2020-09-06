@@ -3,7 +3,7 @@ const multer = require('multer');
 const bodyparser = require('body-parser');
 const ejs = require("ejs");
 const path = require('path');
-//const tf = require('@tenserflow/tfjs-node');
+const tf = require('@tenserflow/tfjs-node');
 const indexRoute = require("./routes/indexroute");
 const app = express();
 
