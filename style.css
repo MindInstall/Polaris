@@ -1,0 +1,82 @@
+.nav{
+    font-family: 'Anton';
+}
+
+header{
+    padding: 150px;
+    background-color: rgb(231, 143, 10);
+    margin-bottom: 100px;
+}
+
+body > header > div > h1{
+    font-family: 'Lexend Peta';
+    font-size: 60px;
+    color: white;
+}
+
+body > header > div > h5{
+font-family: Dancing Script;
+color: rgba(216, 140, 25, 0.925);
+font-size: 30px;
+}
+
+body > div.container.text-center.my-5.use > h1{
+    font-family: Lobster;
+    color: turquoise;
+    font-size: 60px;
+}
+
+.cont{
+    color: gray;
+    font-size: 25px;
+    margin-bottom: 100px;
+}
+
+.cont ol{
+    list-style-type: none;
+}
+
+.cont ol li{
+    border-left: 2px solid gold;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+#output_image
+{
+ width:300px;
+ height: 300px;
+ margin: auto;
+}
+
+#output_image1
+{
+ width:300px;
+ height: 300px;
+ margin: auto;
+}
+
+body > div.container.ima > div > div:nth-child(1){
+    padding-left: 20px;
+}
+
+body > div.container.ima > div > div:nth-child(2){
+    padding-left: 20px;
+}
+
+#out{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 2px solid lightgray;
+    margin-bottom: 50px;
+}
+
+footer{
+    padding: 40px 100px;
+    background-color: rgb(4, 5, 110);
+}
+
+footer > div > h5{
+    color: whitesmoke;
+}
