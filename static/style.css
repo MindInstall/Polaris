@@ -4,7 +4,7 @@
 
 header{
     padding: 150px;
-    background-color: lightgreen;
+    background-color: rgb(192, 173, 3);
     margin-bottom: 100px;
 }
 
@@ -22,7 +22,7 @@ font-size: 30px;
 
 body > div.container.text-center.my-5.use > h1{
     font-family: Lobster;
-    color: turquoise;
+    color: rgb(192, 173, 3);
     font-size: 60px;
 }
 

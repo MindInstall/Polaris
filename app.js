@@ -4,6 +4,8 @@ const bodyparser = require('body-parser');
 const ejs = require("ejs");
 const path = require('path');
 const tf = require('@tenserflow/tfjs-node');
+const indexRoute = require("./routes/indexroute");
+const app = express();
 
 //Uncomment this line when the model is uploaded
 //const model = await tf.models.modelFromJSON("file://model/model.json");
@@ -43,9 +45,6 @@ function checkFileType(file, cb) {
     }
 }
 
-// Init app
-const app = express();
-
 // EJS
 app.set('view engine', 'ejs');
 
@@ -74,7 +73,7 @@ app.post('/upload', (req, res) => {
         }
     });
 });
-
-app.listen(port, ()=> {
+app.use("/", indexRoute);
+app.listen(port, () => {
     consoloe.log(`Server listening for requests at ${port}`)
 });
