@@ -10,40 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend+Peta&family=Lobster&display=swap"
     rel="stylesheet">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Node File Uploads</title>
-  </head>
-
-<body>
-  <h1>File Upload</h1>
-  <%= typeof msg != 'undefined' ? msg : '' %>
-  <form action="/upload" method="POST" enctype="multipart/form-data">
-    <span>File</span>
-    <input name="myImage" type="file">
-    <button type="submit">Submit</button>
-  </form>
-  <br>
-  <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
-</body>
-
-</html>
-<!doctype html>
-<html lang="en">
-
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend+Peta&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend+Peta&family=Lobster&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -57,7 +24,7 @@
 
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand nav" href="#index.html">
-      <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      <img src="./logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
       Polaris
     </a>
   </nav>
@@ -86,7 +53,7 @@
       </div>
       <div class="col-md-6">
         <h1 class="text-center">Some Examples</h1>
-        <img src="./assets/example.jpeg" width="500" height="350">
+        <img src="./example.jpeg" width="500" height="350">
       </div>
     </div>
   </div>
@@ -109,8 +76,7 @@
       </div>
     </div>
   </div>
-
-  <script src="./index.js"></script>
+  <% include("function.ejs") %>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
