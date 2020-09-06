@@ -28,6 +28,7 @@ previewImage1.setAttribute("src", this.result);
 }
 });*/
 
+
 function preview_image(event) 
 {
  var reader = new FileReader();
