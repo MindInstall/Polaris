@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const bodyparser = require('body-parser');
-const ejs = require("ejs");
+const ejs = require("ejs"); s
 const path = require('path');
 const indexRoute = require("./routes/indexroute");
 const app = express();
@@ -20,15 +20,22 @@ const storage = multer.diskStorage({
 });
 
 // Init Upload
-const upload = multer({
+const upload1 = multer({
     storage: storage,
     limits: { fileSize: 10000000 },
     fileFilter: function (req, file, cb) {
         checkFileType(file, cb);
     }
-}).single('myImage');
+}).single('myImage1');
 
-// Check File Type
+const upload2 = multer({
+    storage: storage,
+    limits: { fileSize: 10000000 },
+    fileFilter: function (req, file, cb) {
+        checkFileType(file, cb);
+    }
+}).single('myImage2');
+
 function checkFileType(file, cb) {
     // Allowed ext
     const filetypes = /jpeg|jpg|png|gif/;
@@ -43,8 +50,6 @@ function checkFileType(file, cb) {
         cb('Error: Images Only!');
     }
 }
-
-// EJS
 app.set('view engine', 'ejs');
 
 // Public Folder
@@ -53,7 +58,25 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.render('index'));
 
 app.post('/upload', (req, res) => {
-    upload(req, res, (err) => {
+    upload1(req, res, (err) => {
+        if (err) {
+            res.render('index', {
+                msg: err
+            });
+        } else {
+            if (req.file == undefined) {
+                res.render('index', {
+                    msg: 'Error: No File Selected!'
+                });
+            } else {
+                res.render('index', {
+                    msg: 'File Uploaded!',
+                    file: `uploads/${req.file.filename}`
+                });
+            }
+        }
+    });
+    upload2(req, res, (err) => {
         if (err) {
             res.render('index', {
                 msg: err
@@ -72,6 +95,7 @@ app.post('/upload', (req, res) => {
         }
     });
 });
+
 app.listen(port, () => {
     console.log(`Server listening for requests at ${port}`)
 });
