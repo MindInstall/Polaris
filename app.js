@@ -3,7 +3,7 @@ const multer = require('multer');
 const bodyparser = require('body-parser');
 const ejs = require("ejs");
 const path = require('path');
-const tf = require('@tenserflow/tfjs-node');
+//const tf = require('@tenserflow/tfjs-node');
 const indexRoute = require("./routes/indexroute");
 const app = express();
 
@@ -75,5 +75,5 @@ app.post('/upload', (req, res) => {
 });
 app.use("/", indexRoute);
 app.listen(port, () => {
-    consoloe.log(`Server listening for requests at ${port}`)
+    console.log(`Server listening for requests at ${port}`)
 });
