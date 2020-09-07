@@ -20,21 +20,13 @@ const storage = multer.diskStorage({
 });
 
 // Init Upload
-const upload1 = multer({
+const upload = multer({
     storage: storage,
     limits: { fileSize: 10000000 },
     fileFilter: function (req, file, cb) {
         checkFileType(file, cb);
     }
-}).single('myImage1');
-
-const upload2 = multer({
-    storage: storage,
-    limits: { fileSize: 10000000 },
-    fileFilter: function (req, file, cb) {
-        checkFileType(file, cb);
-    }
-}).single('myImage2');
+}).single('photos');
 
 function checkFileType(file, cb) {
     // Allowed ext
@@ -58,25 +50,7 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.render('index'));
 
 app.post('/upload', (req, res) => {
-    upload1(req, res, (err) => {
-        if (err) {
-            res.render('index', {
-                msg: err
-            });
-        } else {
-            if (req.file == undefined) {
-                res.render('index', {
-                    msg: 'Error: No File Selected!'
-                });
-            } else {
-                res.render('index', {
-                    msg: 'File Uploaded!',
-                    file: `uploads/${req.file.filename}`
-                });
-            }
-        }
-    });
-    upload2(req, res, (err) => {
+    upload(req, res, (err) => {
         if (err) {
             res.render('index', {
                 msg: err

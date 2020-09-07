@@ -66,15 +66,16 @@
       <form action="/upload" method="POST" enctype="multipart/form-data">
       <div class="col-md-6">
         <h1>Upload Image 1</h1>
-        <input name="myImage1" type="file" accept="image/*" onchange="preview_image(event)">
+        <input name="photos" type="file" accept="image/*" onchange="preview_image(event)" />
 
         <img id="output_image" class="responsive-img" />
       </div>
-      <div class="col-md-6">
+      <%# <div class="col-md-6">
         <h1>Upload Image 2</h1>
-        <input name="myImage2" type="file" accept="image/*" onchange="preview_image1(event)">
+        <input name="myImage2" type="file" accept="image/*" onchange="preview_image1(event)" />
         <img id="output_image1" class="responsive-img" />
       </div>
+      %>
       <div class="container text-center my-5">
         <button type="submit" class="btn btn-outline-secondary">Generate</button>
       </div>
