@@ -63,21 +63,20 @@
   </div>
   <div class="container ima">
     <div class="row">
-      <form action="/upload" method="POST" enctype="multipart/form-data"></form>
-      <div class="col-md-6">
-        <h1>Upload Image 1</h1>
-        <input name="myImage1" type="file" accept="image/*" onchange="preview_image(event)">
-
-        <img id="output_image" class="responsive-img" />
-      </div>
-      <div class="col-md-6">
-        <h1>Upload Image 2</h1>
-        <input name="myImage2" type="file" accept="image/*" onchange="preview_image1(event)">
-        <img id="output_image1" class="responsive-img" />
-      </div>
-      <div class="container text-center my-5">
-        <button type="submit" class="btn btn-outline-secondary">Generate</button>
-      </div>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="col-md-6">
+          <h1>Upload Image 1</h1>
+          <input name="photo1" type="file" accept="image/*" onchange="preview_image(event)">
+          <img id="output_image" class="responsive-img" />
+        </div>
+        <div class="col-md-6">
+          <h1>Upload Image 2</h1>
+          <input name="photo2" type="file" accept="image/*" onchange="preview_image1(event)">
+          <img id="output_image1" class="responsive-img" />
+        </div>
+        <div class="container text-center my-5">
+          <button type="submit" class="btn btn-outline-secondary">Generate</button>
+        </div>
       </form>
     </div>
   </div>
@@ -106,7 +105,6 @@
       }
       reader.readAsDataURL(event.target.files[0]);
     }
-
 
     function preview_image1(event) {
       var reader = new FileReader();
