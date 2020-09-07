@@ -49,8 +49,10 @@ app.post('/upload', upload.fields([
     { name: 'photo1', maxCount: 1 },
     { name: 'photo2', maxCount: 1}
 ]), (req, res, next) => {
-    console.log(req.files);
-    res.render('index');
+    res.render('result', {
+        file1: `uploads/${req.files.photo1[0].filename}`,
+        file2: `uploads/${req.files.photo2[0].filename}`
+    });
   })
 
 app.listen(port, () => {
