@@ -1,9 +1,8 @@
 # Polaris
 
 Blend images and create visually attractive images with the help of deep learning.
-
-**Front-End => React.js**, 
-__Back-End => Node.js, Express.js__
+ 
+__Built with Node.js, Express.js and EJS templates__
 
 ## Getting Started
 
@@ -11,5 +10,4 @@ __Back-End => Node.js, Express.js__
 2. You should have npm/yarn, Node.js installed on your system.
 3. Run `yarn install` / `npm install` to install all the required dependencies.
 4. Run `node app` to start the server.
-5. Run `npm start` on another terminal for the UI.
-6. You can now browse over to `http://localhost:3000` to see the apllication running.
+5. You can now browse over to `http://localhost:3000` to see the apllication running.
