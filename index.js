@@ -1,4 +1,4 @@
-
+// Preview uploaded image
 function preview_image(event) 
 {
  var reader = new FileReader();
@@ -10,7 +10,7 @@ function preview_image(event)
  reader.readAsDataURL(event.target.files[0]);
 }
 
-
+// Preview uploaded image
 function preview_image1(event) 
 {
  var reader = new FileReader();

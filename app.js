@@ -6,6 +6,7 @@ const path = require('path');
 const indexRoute = require("./routes/indexroute");
 const port = process.env.PORT || 4000;
 
+// Multer storage stats
 const storage = multer.diskStorage({
     destination: './public/uploads/',
     filename: (req, file, cb) => {
@@ -13,6 +14,7 @@ const storage = multer.diskStorage({
     }
 })
 
+// Processing after upload
 const upload = multer({ 
     storage: storage,
     limits: { fileSize: 10000000 },
@@ -21,6 +23,7 @@ const upload = multer({
     }
 })
 
+// Check if file uploaded is valid
 const checkFileType = (file, cb) => {
     const filetypes = /jpeg|jpg|png|gif/;
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -35,7 +38,8 @@ const checkFileType = (file, cb) => {
 
 const app = express();
 
-//Uncomment this line when the model is uploaded
+// Uncomment this line when the model is uploaded
+// Testing of models are to be done
 //const model = await tf.models.modelFromJSON("file://model/model.json");
 
 app.set('view engine', 'ejs');
@@ -45,6 +49,7 @@ app.use(express.static('./public'));
 
 app.get('/', (req, res) => res.render('index'));
 
+// Receiving uploads and storing them locally
 app.post('/upload', upload.fields([
     { name: 'photo1', maxCount: 1 },
     { name: 'photo2', maxCount: 1}
